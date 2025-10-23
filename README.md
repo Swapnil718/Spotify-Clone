@@ -93,22 +93,8 @@ Some previews are region-dependent. In server/server.js:
 const MARKET = "US"; // change to your country code, e.g., "IN", "GB", "DE"
 The value is used in /api/search, /api/playlist/:id, and /api/tracks?ids=.
 Fixed “Today’s biggest hits” picks
-In public/app.js, a fixed list of track IDs is used:
 
-const TRACK_IDS = [
-  "0VjIjW4GlUZAMYd2vXMi3b", // The Weeknd - Blinding Lights
-  "463CkQjx2Zk1yXoBuierM9", // Dua Lipa - Levitating
-  "2Fxmhks0bxGSBdJ92vM42m", // Billie Eilish - bad guy
-  "7qiZfU4dY1lWllzX7mPBI3", // Ed Sheeran - Shape of You
-  "0pqnGHJpmpxLKifKRmU6WP", // Imagine Dragons - Believer
-];
-
-Swap IDs with your favorites. You can look up IDs on open.spotify.com and copy the last path segment.
-🛡️ Why a backend?
-We use Client Credentials (app-only) to fetch public data.
-Please don't expose the client secret in frontend code.
-The backend also filters results to only tracks that have a preview_url.
-
+---
 ## ⚠️ Legal
 This project uses the Spotify Web API.
 “Spotify” and associated imagery are trademarks of Spotify AB.
