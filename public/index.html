@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spotify UI • Simple Picks</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="logo">
+        <span>Home</span>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active">Home</button>
+        <button class="nav-btn">Search</button>
+      </nav>
+      <div class="library">
+        <h3>Your Library</h3>
+        <div class="lib-card">
+          <div>
+            <div class="lib-title">Create your first playlist</div>
+            <div class="lib-sub">It’s easy, we’ll help you</div>
+          </div>
+          <button class="pill">Create playlist</button>
+        </div>
+        <div class="lib-card">
+          <div>
+            <div class="lib-title">Let’s find some podcasts to follow</div>
+            <div class="lib-sub">We’ll keep you updated on new episodes</div>
+          </div>
+          <button class="pill">Browse podcasts</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <header class="topbar">
+        <div class="chevrons">
+          <button class="circle">&larr;</button>
+          <button class="circle">&rarr;</button>
+        </div>
+        <div class="filters">
+          <button class="chip active">All</button>
+          <button class="chip">Music</button>
+          <button class="chip">Podcasts</button>
+        </div>
+        <div class="spacer"></div>
+        <button class="btn">Explore Premium</button>
+        <button class="btn outline">Install App</button>
+        <div class="avatar">D</div>
+      </header>
+
+      <section class="section">
+        <h2>Today’s biggest hits</h2>
+        <div id="hits" class="card-grid"></div>
+      </section>
+
+      <section class="section">
+        <h2>Featured Playlists</h2>
+        <div id="featured" class="card-grid"></div>
+      </section>
+
+      <section class="section">
+        <h2>Popular Artists</h2>
+        <div id="artists" class="card-grid small"></div>
+      </section>
+
+      <section class="section">
+        <h2>New Releases</h2>
+        <div id="releases" class="card-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- PLAYER -->
+  <footer class="player">
+    <div class="now-playing">
+      <img id="np-cover" src="" alt="cover">
+      <div>
+        <div id="np-title" class="np-title">—</div>
+        <div id="np-artist" class="np-artist">—</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-row">
+        <button id="prev" class="icon-btn" title="Previous">⏮</button>
+        <button id="play" class="icon-btn" title="Play/Pause">▶️</button>
+        <button id="next" class="icon-btn" title="Next">⏭</button>
+      </div>
+      <div class="progress-row">
+        <span id="current">0:00</span>
+        <input id="seek" type="range" min="0" max="100" value="0" />
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="right-controls">
+      <span>🔊</span>
+      <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9" />
+    </div>
+
+    <audio id="audio"></audio>
+  </footer>
+
+  <script>window.API_BASE = "http://localhost:5050";</script>
+  <script src="app.js"></script>
+</body>
+</html>
