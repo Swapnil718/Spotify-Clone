@@ -30,13 +30,21 @@ Note: Not every Spotify track has a preview; the app filters out items with prev
 
 ## 🧱 Project Structure
 spotify-clone/
-├─ server/               # Node/Express API (no user auth)
+
+├─ server/      # Node/Express API (no user auth)
+
 │  ├─ server.js
+
 │  ├─ package.json
-│  └─ .env               # SPOTIFY_CLIENT_ID/SECRET (not committed)
+
+│  └─ .env     # SPOTIFY_CLIENT_ID/SECRET (not committed)
+
 └─ public/               # Static frontend (HTML/CSS/JS)
+
    ├─ index.html
+   
    ├─ styles.css
+   
    └─ app.js
 
 🚀 Quickstart
